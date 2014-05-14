@@ -1,0 +1,5 @@
+name = "Custom File Entity"
+description = "Fix file entities for MetaDataEntityWrapper"
+package = "Media"
+core = "7.x"
+dependencies[] = file_entity

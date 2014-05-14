@@ -1,0 +1,23 @@
+<?php
+
+/**
+* @file
+* Provides file entities for MetaDataEntityWrapper.
+*/
+
+function custom_file_entity_entity_property_info_alter(&$info) {
+  $info['file']['properties']['uri'] = array(
+    'label' => t("URI"),
+    'description' => t("The URI of the file."),
+    'getter callback' => 'custom_file_entity_entity_get_file_properties',
+    'schema field' => 'uri',
+  );
+}
+
+function custom_file_entity_entity_get_file_properties($file, array $options, $name) {
+  switch ($name) {
+    case 'uri':
+      return $file->uri;
+      break;
+  }
+}
